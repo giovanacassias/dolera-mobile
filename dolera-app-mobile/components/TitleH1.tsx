@@ -17,8 +17,9 @@ export default function TitleH1({ title }: TitleH1Props) {
 const styles = StyleSheet.create({
   container: {
     width: "100%",
-    height: 100,
+    //height: 100,
     //backgroundColor: "red",
+    marginBottom: 40,
   },
 
   text: {

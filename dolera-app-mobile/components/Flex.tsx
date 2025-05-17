@@ -9,6 +9,7 @@ type FlexProps = {
     | "space-around"
     | "space-between";
   align?: "flex-start" | "center" | "flex-end" | "stretch";
+  marginTop?: number;
   gap?: number;
   direction?: "row" | "column";
   style?: StyleProp<ViewStyle>;
@@ -18,6 +19,7 @@ export default function Flex({
   children,
   justify,
   align,
+  marginTop,
   gap,
   direction,
   style,
@@ -28,6 +30,7 @@ export default function Flex({
         {
           justifyContent: justify,
           alignItems: align,
+          marginTop: marginTop,
           gap,
           flexDirection: direction,
         },

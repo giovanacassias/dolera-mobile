@@ -2,7 +2,8 @@ import { View, Text, StyleSheet, Image, TouchableOpacity } from "react-native";
 import React from "react";
 import Flex from "./Flex";
 import TitleH2 from "./TitleH2";
-import Button from "./Button";
+import Button from "./MyButton";
+import MyButton from "./MyButton";
 
 type BodyProps = {
   h2: string;
@@ -22,25 +23,31 @@ export default function Body({
   return (
     <Flex>
       <TitleH2 title={h2} />
-      <Flex align="center" justify="space-between" style={styles.container}>
-        <Text>{description}</Text>
+      <Text style={styles.text}>{description}</Text>
+      <Flex align="center" justify="center" style={styles.container}>
         <Image source={{ uri: imgURL }} style={styles.img} />
-        <Button buttonName={buttonName} rota={rota}></Button>
       </Flex>
+      <MyButton buttonName={buttonName} rota={rota} />
     </Flex>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
-    margin: 10,
+    //margin: 10,
     //backgroundColor: "red",
-    height: "72%",
+    height: "60%",
+    width: "100%",
   },
 
   img: {
     //marginTop: 70,
-    width: 120,
-    height: 120,
+    width: 150,
+    height: 150,
+    //marginTop: 90,
+  },
+
+  text: {
+    paddingLeft: 9,
   },
 });

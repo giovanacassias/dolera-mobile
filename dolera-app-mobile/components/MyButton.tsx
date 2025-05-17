@@ -1,13 +1,21 @@
-import { TouchableOpacity, Text, StyleSheet } from "react-native";
+import {
+  TouchableOpacity,
+  Text,
+  StyleSheet,
+  StyleProp,
+  ViewStyle,
+} from "react-native";
 import React from "react";
 import { useRouter } from "expo-router";
+import Flex from "./Flex";
 
-type ButtonProps = {
+type MyButtonProps = {
   buttonName: string;
   rota: string;
+  style?: StyleProp<ViewStyle>;
 };
 
-export default function Button({ buttonName, rota }: ButtonProps) {
+export default function MyButton({ buttonName, rota, style }: MyButtonProps) {
   const router = useRouter();
 
   const handlePress = () => {
@@ -15,9 +23,11 @@ export default function Button({ buttonName, rota }: ButtonProps) {
   };
 
   return (
-    <TouchableOpacity onPress={handlePress}>
-      <Text style={styles.button}>{buttonName}</Text>
-    </TouchableOpacity>
+    <Flex>
+      <TouchableOpacity onPress={handlePress}>
+        <Text style={styles.button}>{buttonName}</Text>
+      </TouchableOpacity>
+    </Flex>
   );
 }
 
@@ -36,11 +46,12 @@ const styles = StyleSheet.create({
     color: "#FAFAFA",
     fontSize: 12,
     fontWeight: "bold",
-    width: 280,
+    //width: "100%",
     height: 45,
     textAlign: "center",
     alignContent: "center",
     justifyContent: "center",
     textTransform: "uppercase",
+    marginTop: 20,
   },
 });

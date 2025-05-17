@@ -18,7 +18,7 @@ const styles = StyleSheet.create({
   container: {
     width: "100%",
     height: 40,
-    marginLeft: 10,
+    //marginLeft: 10,
     //backgroundColor: "blue",
   },
 
@@ -26,6 +26,6 @@ const styles = StyleSheet.create({
     color: "#233329",
     fontSize: 25,
     fontWeight: "bold",
-    //paddingLeft: 9,
+    paddingLeft: 9,
   },
 });

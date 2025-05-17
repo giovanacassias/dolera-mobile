@@ -1,12 +1,34 @@
-import { View, Text } from "react-native";
+import { View, Text, StyleSheet, Image, TextInput } from "react-native";
 import React from "react";
-import Button from "../components/Button";
+import Button from "../components/MyButton";
+import Header from "../components/Header";
+import ArrowLeft from "../components/ArrowLeft";
+import TitleH1 from "../components/TitleH1";
+import Flex from "../components/Flex";
+import TripForm from "../components/TripForm";
+import MyButton from "../components/MyButton";
 
 export default function newtrip() {
   return (
-    <View>
-      <Text>newtrip</Text>
-      <Button buttonName="voltar" rota="/" />
+    <View style={styles.container}>
+      <ArrowLeft />
+      <Flex marginTop={25}>
+        <TitleH1 title="Create your trip" />
+      </Flex>
+      <Flex>
+        <TripForm btnName="create trip" rota="/" />
+      </Flex>
     </View>
   );
 }
+
+const styles = StyleSheet.create({
+  container: {
+    margin: 20,
+    //backgroundColor: "red",
+    height: "100%",
+  },
+  /*   button: {
+    marginTop: 50,
+  }, */
+});
