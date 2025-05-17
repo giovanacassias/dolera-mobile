@@ -1,10 +1,30 @@
-import { View, Text } from "react-native";
+import { View, Text, Image, StyleSheet } from "react-native";
 import React from "react";
+import Flex from "./Flex";
 
 export default function Header() {
   return (
-    <View>
-      <Text>TESTTTTTTT</Text>
-    </View>
+    <Flex align="flex-start" justify="center" style={styles.container}>
+      <Image
+        style={styles.logoImg}
+        source={{
+          uri: "https://res.cloudinary.com/ddb437lsi/image/upload/v1739141302/dolera-logo.png",
+        }}
+      />
+    </Flex>
   );
 }
+
+const styles = StyleSheet.create({
+  container: {
+    width: "100%",
+    height: 100,
+    paddingLeft: 20,
+  },
+
+  logoImg: {
+    width: 100,
+    height: 30,
+    resizeMode: "contain",
+  },
+});

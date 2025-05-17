@@ -1,4 +1,4 @@
-import { View, Text } from "react-native";
+import { View, Text, StyleProp, ViewStyle } from "react-native";
 import React, { PropsWithChildren } from "react";
 
 type FlexProps = {
@@ -11,6 +11,7 @@ type FlexProps = {
   align?: "flex-start" | "center" | "flex-end" | "stretch";
   gap?: number;
   direction?: "row" | "column";
+  style?: StyleProp<ViewStyle>;
 } & PropsWithChildren;
 
 export default function Flex({
@@ -19,15 +20,19 @@ export default function Flex({
   align,
   gap,
   direction,
+  style,
 }: FlexProps) {
   return (
     <View
-      style={{
-        justifyContent: justify,
-        alignItems: align,
-        gap,
-        flexDirection: direction,
-      }}
+      style={[
+        {
+          justifyContent: justify,
+          alignItems: align,
+          gap,
+          flexDirection: direction,
+        },
+        style,
+      ]}
     >
       {children}
     </View>
