@@ -4,7 +4,7 @@ import React from "react";
 export default function Header() {
   return (
     <View>
-      <Text>This is the header</Text>
+      <Text>TESTTTTTTT</Text>
     </View>
   );
 }
