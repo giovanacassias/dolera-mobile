@@ -20,7 +20,7 @@ const styles = StyleSheet.create({
     width: "100%",
     height: 30,
     marginTop: 30,
-    paddingLeft: 20,
+    paddingLeft: 0,
   },
 
   logoImg: {
