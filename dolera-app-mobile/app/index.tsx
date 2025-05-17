@@ -16,6 +16,7 @@ export default function index() {
           description="It seems that you don’t have any trips yet. Let’s fix that!"
           h2="Oops..."
           imgURL="https://res.cloudinary.com/ddb437lsi/image/upload/v1747450986/passport.png"
+          rota="/newtrip"
         />
       </Flex>
     </View>

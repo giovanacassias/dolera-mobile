@@ -9,6 +9,7 @@ type BodyProps = {
   description: string;
   imgURL: string;
   buttonName: string;
+  rota: string;
 };
 
 export default function Body({
@@ -16,6 +17,7 @@ export default function Body({
   description,
   imgURL,
   buttonName,
+  rota,
 }: BodyProps) {
   return (
     <Flex>
@@ -23,7 +25,7 @@ export default function Body({
       <Flex align="center" justify="space-between" style={styles.container}>
         <Text>{description}</Text>
         <Image source={{ uri: imgURL }} style={styles.img} />
-        <Button buttonName={buttonName}></Button>
+        <Button buttonName={buttonName} rota={rota}></Button>
       </Flex>
     </Flex>
   );
