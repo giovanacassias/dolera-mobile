@@ -17,15 +17,17 @@ export default function Header() {
 
 const styles = StyleSheet.create({
   container: {
-    width: "100%",
+    width: "50%",
     height: 30,
     marginTop: 30,
     paddingLeft: 0,
+    //backgroundColor: "blue",
   },
 
   logoImg: {
     width: 100,
-    height: 30,
+    //height: 30,
+    flex: 1,
     resizeMode: "contain",
   },
 });

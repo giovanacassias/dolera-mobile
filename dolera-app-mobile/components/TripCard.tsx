@@ -2,6 +2,7 @@ import { View, Text, StyleSheet, TouchableOpacity } from "react-native";
 import React from "react";
 import Flex from "./Flex";
 import { MaterialCommunityIcons, MaterialIcons } from "@expo/vector-icons";
+import { useActionSheet } from "@expo/react-native-action-sheet";
 
 type TripCardProps = {
   name: string;
@@ -18,6 +19,11 @@ export default function TripCard({
   end,
   budget,
 }: TripCardProps) {
+  const { showActionSheetWithOptions } = useActionSheet();
+  const options = ["Delete", "Save", "Cancel"];
+  const destructiveButtonIndex = 0;
+  const cancelButtonIndex = 2;
+
   return (
     <Flex style={styles.container} direction="row">
       <Flex style={styles.icon} align="center" justify="center">
@@ -31,7 +37,22 @@ export default function TripCard({
           justify="space-between"
         >
           <Text style={styles.tripName}>{name}</Text>
-          <TouchableOpacity>
+          <TouchableOpacity
+            onPress={() => {
+              console.log("Botão pressionado");
+
+              showActionSheetWithOptions(
+                {
+                  options,
+                  cancelButtonIndex,
+                  destructiveButtonIndex,
+                },
+                (iconIndex) => {
+                  console.log(iconIndex);
+                }
+              );
+            }}
+          >
             <MaterialIcons name="edit" size={20} color="#FA9984" />
           </TouchableOpacity>
         </Flex>

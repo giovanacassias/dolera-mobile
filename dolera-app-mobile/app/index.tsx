@@ -1,4 +1,4 @@
-import { View, Text, StyleSheet, TextProps } from "react-native";
+import { View, Text, StyleSheet } from "react-native";
 import React from "react";
 import Header from "../components/Header";
 import TitleH1 from "../components/TitleH1";

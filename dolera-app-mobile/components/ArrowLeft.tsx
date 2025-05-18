@@ -8,7 +8,7 @@ export default function ArrowLeft() {
     <MaterialIcons
       name="arrow-back"
       size={30}
-      color="black"
+      color="#233329"
       style={styles.icon}
       onPress={() => router.back()}
     />

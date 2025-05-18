@@ -14,6 +14,7 @@ import Header from "../components/Header";
 import { Avatar, Card, List } from "react-native-paper";
 import TripCard from "../components/TripCard";
 import data from "../services/MOCK_DATA.json";
+import GoHome from "../components/GoHome";
 
 export default function myTrips() {
   const params = useLocalSearchParams();
@@ -21,9 +22,12 @@ export default function myTrips() {
 
   return (
     <Flex style={styles.container}>
-      <Header />
+      <Flex direction="row" align="flex-end" style={styles.header}>
+        <Header />
+        <GoHome />
+      </Flex>
       <TitleH1 title="Caio's trips" />
-      <Flex justify="space-around" align="center">
+      <Flex justify="space-around" align="center" style={styles.listContainer}>
         <FlatList
           style={styles.listContainer}
           data={trip ? [trip, ...data] : data}
@@ -46,8 +50,15 @@ const styles = StyleSheet.create({
   container: {
     padding: 20,
     flex: 1,
-    //width: "100%",
+    width: "100%",
   },
 
-  listContainer: {},
+  listContainer: {
+    flex: 1,
+  },
+
+  header: {
+    width: "100%",
+    //backgroundColor: "red",
+  },
 });
