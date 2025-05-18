@@ -24,15 +24,15 @@ export default function TripCard({
         <MaterialIcons name="flight" size={40} color="#233329" />
       </Flex>
       <Flex style={styles.info} align="flex-start" justify="center">
-        <Text style={styles.tripName}>France 2025{name}</Text>
+        <Text style={styles.tripName}>{name}</Text>
         <Flex style={styles.details}>
-          <Text style={styles.detailsText}>Euro{currency}</Text>
-          <Text style={styles.detailsText}>$15,000{budget}</Text>
+          <Text style={styles.detailsText}>{currency}</Text>
+          <Text style={styles.detailsText}>{budget}</Text>
         </Flex>
         <Flex direction="row" justify="space-between" style={styles.details}>
-          <Text style={styles.detailsText}>20/05/2025{start}</Text>
+          <Text style={styles.detailsText}>{start}</Text>
           <Text> - </Text>
-          <Text style={styles.detailsText}>20/07/2025{end}</Text>
+          <Text style={styles.detailsText}>{end}</Text>
         </Flex>
       </Flex>
     </Flex>
@@ -41,9 +41,10 @@ export default function TripCard({
 
 const styles = StyleSheet.create({
   container: {
-    margin: 20,
+    marginBottom: 20,
     backgroundColor: "white",
     height: 120,
+    //flex: 1,
     width: "100%",
     borderRadius: 10,
     shadowColor: "#EDEDED",
