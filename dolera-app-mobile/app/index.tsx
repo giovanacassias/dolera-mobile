@@ -1,5 +1,5 @@
 import { View, Text, StyleSheet } from "react-native";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Header from "../components/Header";
 import TitleH1 from "../components/TitleH1";
 import Flex from "../components/Flex";
@@ -8,11 +8,19 @@ import {
   ActionSheetProvider,
   connectActionSheet,
 } from "@expo/react-native-action-sheet";
+import MyModal from "../components/MyModal";
 
 function index() {
+  const [showModal, setShowModal] = useState(false);
+
+  useEffect(() => {
+    setShowModal(true);
+  }, []);
+
   return (
     <ActionSheetProvider>
       <View style={styles.container}>
+        <MyModal visibility={showModal} onClose={() => setShowModal(false)} />
         <Header />
         <TitleH1 title="Hi Caio!"></TitleH1>
         <Flex>
@@ -36,5 +44,6 @@ export default ConnectedApp;
 const styles = StyleSheet.create({
   container: {
     margin: 20,
+    flex: 1,
   },
 });
