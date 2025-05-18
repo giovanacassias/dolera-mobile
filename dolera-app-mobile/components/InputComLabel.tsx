@@ -4,21 +4,24 @@ import React, { useState } from "react";
 type InputComLabelProps = {
   campo: string;
   placeholder: string;
+  value: string;
+  onChangeText: (text: string) => void;
 };
 
 export default function InputComLabel({
   campo,
   placeholder,
+  value,
+  onChangeText,
 }: InputComLabelProps) {
-  const [texto, setTexto] = useState("");
   return (
     <View style={styles.container}>
       <Text style={styles.label}>{campo}</Text>
       <TextInput
         style={styles.input}
         placeholder={placeholder}
-        value={texto}
-        onChangeText={setTexto}
+        value={value}
+        onChangeText={onChangeText}
         placeholderTextColor="#aaa"
       />
     </View>

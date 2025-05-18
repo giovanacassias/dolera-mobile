@@ -4,6 +4,7 @@ import Flex from "./Flex";
 import TitleH2 from "./TitleH2";
 import Button from "./MyButton";
 import MyButton from "./MyButton";
+import { useRouter } from "expo-router";
 
 type BodyProps = {
   h2: string;
@@ -20,6 +21,11 @@ export default function Body({
   buttonName,
   rota,
 }: BodyProps) {
+  const router = useRouter();
+
+  const handlePress = () => {
+    router.push(rota);
+  };
   return (
     <Flex>
       <TitleH2 title={h2} />
@@ -27,7 +33,7 @@ export default function Body({
       <Flex align="center" justify="center" style={styles.container}>
         <Image source={{ uri: imgURL }} style={styles.img} />
       </Flex>
-      <MyButton buttonName={buttonName} rota={rota} />
+      <MyButton buttonName={buttonName} rota={rota} onPress={handlePress} />
     </Flex>
   );
 }

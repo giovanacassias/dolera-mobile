@@ -3,6 +3,7 @@
     "name": "dolera-app-mobile",
     "slug": "dolera-app-mobile",
     "version": "1.0.0",
+    "scheme": "dolera",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "userInterfaceStyle": "light",

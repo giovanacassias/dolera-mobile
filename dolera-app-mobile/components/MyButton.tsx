@@ -13,18 +13,18 @@ type MyButtonProps = {
   buttonName: string;
   rota: string;
   style?: StyleProp<ViewStyle>;
+  onPress?: () => void;
 };
 
-export default function MyButton({ buttonName, rota, style }: MyButtonProps) {
-  const router = useRouter();
-
-  const handlePress = () => {
-    router.push(rota);
-  };
-
+export default function MyButton({
+  buttonName,
+  rota,
+  style,
+  onPress,
+}: MyButtonProps) {
   return (
     <Flex>
-      <TouchableOpacity onPress={handlePress}>
+      <TouchableOpacity onPress={onPress}>
         <Text style={styles.button}>{buttonName}</Text>
       </TouchableOpacity>
     </Flex>
