@@ -19,6 +19,10 @@ import GoHome from "../components/GoHome";
 export default function myTrips() {
   const params = useLocalSearchParams();
   const trip = params.trip ? JSON.parse(params.trip as string) : null;
+  const isValidTrip =
+    trip.name && trip.currency && trip.startDate && trip.endDate && trip.budget;
+
+  const tripData = isValidTrip ? [trip, ...data] : data;
 
   return (
     <Flex style={styles.container}>
@@ -30,7 +34,7 @@ export default function myTrips() {
       <Flex justify="space-around" align="center" style={styles.listContainer}>
         <FlatList
           style={styles.listContainer}
-          data={trip ? [trip, ...data] : data}
+          data={tripData}
           renderItem={({ item }) => (
             <TripCard
               name={item.name}
