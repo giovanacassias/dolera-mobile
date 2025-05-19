@@ -24,9 +24,9 @@ Como primeira avaliação da matéria de "**Programação para Dispositivos Móv
 
 **Tela 1**: *useState(), useEffect(), Modal, useRouter(), touchableOpacity*
 
-**Tela 2**: *TextInput, useRouter(), touchableOpacity, useState(), envio de dados via parâmetros de rota*
+**Tela 2**: *TextInput, useRouter(), touchableOpacity, useState(), envio de dados via parâmetros de rota, icon do MaterialIcons* 
 
-**Tela 3**: *FlatList, useRouter(), useLocalSearchParams(), touchable (icons)*
+**Tela 3**: *FlatList, useRouter(), useLocalSearchParams(), touchable, icon do MaterialIcons*
 
 **Todas as telas possuem**: *componentes genéricos e reutilizáveis (via props), componente próprio 'Flex', navegação entre telas (router.back(), router.push())*
 
