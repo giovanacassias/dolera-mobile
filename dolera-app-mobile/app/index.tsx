@@ -18,22 +18,20 @@ function index() {
   }, []);
 
   return (
-    <ActionSheetProvider>
-      <View style={styles.container}>
-        <MyModal visibility={showModal} onClose={() => setShowModal(false)} />
-        <Header />
-        <TitleH1 title="Hi Caio!"></TitleH1>
-        <Flex>
-          <Body
-            buttonName="new trip"
-            description="It seems that you don’t have any trips yet. Let’s fix that!"
-            h2="Oops..."
-            imgURL="https://res.cloudinary.com/ddb437lsi/image/upload/v1747450986/passport.png"
-            rota="/newtrip"
-          />
-        </Flex>
-      </View>
-    </ActionSheetProvider>
+    <View style={styles.container}>
+      <MyModal visibility={showModal} onClose={() => setShowModal(false)} />
+      <Header />
+      <TitleH1 title="Hi Caio!"></TitleH1>
+      <Flex>
+        <Body
+          buttonName="new trip"
+          description="It seems that you don’t have any trips yet. Let’s fix that!"
+          h2="Oops..."
+          imgURL="https://res.cloudinary.com/ddb437lsi/image/upload/v1747450986/passport.png"
+          rota="/newtrip"
+        />
+      </Flex>
+    </View>
   );
 }
 
